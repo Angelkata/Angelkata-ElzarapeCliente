@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Zarape - Restaurante Mexicano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos CSS internos */
+        @import "Css-Platillos.css";
+
+        /* Estilos específicos para los botones y enlaces en el encabezado */
+        .header .header-buttons a {
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header .header-buttons svg {
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Estilos para los elementos de formulario */
+        h5 {
+            text-align: left;
+            font-size: 25px;
+        }
+
+        input {
+            
+            background-color: #BBCF4A;
+            font-size: 20px;
+        }
+
+        button {
+            font-size: 20px;
+            background-color: #FAEC6A;
+        }
+
+        /* Estilos para el pie de página */
+        .footer {
+            text-align: center;
+            margin-top: 50px; /* Ajusta según sea necesario */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Imagenes/Banner El zarape.png" alt="El Zarape">
+        <div class="header-buttons">
+            <br><br>
+            <a href="Sugerencias.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-person-raised-hand" viewBox="0 0 16 16">
+                    <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207"/>
+                    <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                </svg><br>Sugerencias
+            </a>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a href="Index1.html">Pagina Principal</a>
+        <a href="index.html">Platillos</a>
+        <a href="Bebidas.html">Bebidas</a>
+        <a href="Combos.html">Combos</a>
+        <a href="Postres.html">Postres</a>
+        <a href="Ubicacion.html">Ubicación</a>
+        <div>
+            <a href="https://www.facebook.com/profile.php?id=100082264015753&mibextid=ZbWKwL"><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="https://x.com/Angel65776265"><i class="fab fa-twitter-square fa-2x"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram-square fa-2x"></i></a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>¡Inicia Sesión!</h1>
+        <h5>Favor ingrese su correo y contraseña para poder iniciar sesión</h5>
+        <form>
+            <label for="email" style="font-size: 150%">Correo Electrónico:</label><br>
+            <input type="text" id="email" name="email" placeholder="Ejemplo: Usuario@Gmail.com"><br>
+            <label for="password" style="font-size: 150%">Ingrese su Contraseña:</label><br>
+            <input type="password" id="password" name="password" placeholder="Ejemplo: 35#a38td"><br><br>
+         
+             <a href="Index1.html"><button type="button" style="font-size: 150%">INICIAR SESION</button></a>
+            
+            <a href="Sucursal.html"><button type="button" style="font-size: 150%">INICIAR SESIÓN (administrador)</button></a>
+        </form>
+        <p style="font-size: 150%">¿No cuenta con una cuenta?<br>Puede crear una nueva cuenta</p>
+        <a href="Registro.html"><button type="button" style="font-size: 150%">Registrarse</button></a>
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+
+    <div class="footer">
+        <p>Acerca de Nosotros</p>
+        <p>Contáctanos al Correo: ElZarape1@gmail.com | Teléfono: 33 38952841</p>
+    </div>
+</body>
+</html>

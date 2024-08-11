@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Zarape - Restaurante Mexicano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="css/Css-Platillos.css" rel="stylesheet" type="text/css"/>
+    <style>
+        @import "Css-Platillos.css";
+        
+        /* Estilo adicional para los labels */
+        .form-group label {
+            display: inline-block;
+            width: 180px; /* Ancho deseado para los labels */
+            font-size: 24px; /* Tamaño de fuente ajustado */
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        
+        /* Estilo para los inputs */
+        .form-group input {
+            width: 400px;
+            height: 25px;
+            /* Ancho deseado para los inputs */
+        }
+        
+        /* Estilo para los botones en la parte inferior */
+        .content .buttons {
+            text-align: left; /* Alinear los botones a la izquierda */
+            margin-top: 20px;
+        }
+        
+        /* Ajustes adicionales según necesidades */
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Imagenes/Banner El zarape.png" alt="El Zarape">
+    </div>
+
+    <div class="navbar">
+        <a href="Sucursal.html"><strong>Regresar al Inicio</strong></a>
+    </div>
+    
+    <div class="content">
+        <h1>SUCURSALES</h1>
+        <h2>Administrar Sucursales</h2>
+        <div>
+            <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+		<div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div><script>(function () {
+        var setting = {"query":"México","width":2024,"height":720,"satellite":false,"zoom":5,"placeId":"ChIJU1NoiDs6BIQREZgJa760ZO0","cid":"0xed64b4be6b099811","coords":[23.634501,-102.552784],"cityUrl":"/mexico/cedro-360198","cityAnchorText":"Mapa de El Cedro, Zacatecas, México","lang":"es","queryString":"México","centerCoord":[23.634501,-102.552784],"id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"1129468"};
+        var d = document;
+        var s = d.createElement('script');
+        s.src = 'https://1map.com/js/script-for-user.js?embed_id=1129468';
+        s.async = true;
+        s.onload = function (e) {
+          window.OneMap.initMap(setting)
+        };
+        var to = d.getElementsByTagName('script')[0];
+        to.parentNode.insertBefore(s, to);
+      })();</script><a href="https://1map.com/es/map-embed">1 Map</a></div>
+            
+            <br><br>
+        </div>
+        <div class="form-group">
+            <label for="search">Buscar Sucursales</label>
+            <input type="search" id="nombreCompleto">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="nombreCompleto">Nombre:</label>
+            <input type="text" id="nombreCompleto" placeholder="" name="nombreCompleto">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="codigoPostal">Código Postal:</label>
+            <input type="text" id="codigoPostal" name="codigoPostal">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" id="domicilio" name="domicilio">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="numeroExterior">Número Exterior:</label>
+            <input type="text" id="numeroExterior" name="numeroExterior">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="municipio">Municipio:</label>
+            <input type="text" id="municipio" name="municipio">
+        </div>
+        <br>
+        <!-- Botones -->
+        <div class="buttons">
+            <a href='Sucursal.html' ><button style="font-size: 150%" type="button">Eliminar Ubicacion</button></a>
+            <a href='Sucursal.html' ><button style="font-size: 150%" type="button">Eliminar Ubicacion</button></a>
+            <a href='Sucursal.html'> <button  style="font-size: 150%" type="submit">Aplicar Cambios</button></a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Zarape - Restaurante Mexicano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="Css-Platillos.css" rel="stylesheet" type="text/css"/>
+    <style>
+        @import "mystyles/styles.css";
+        .header .header-buttons button,
+        .header .header-buttons a {
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: white;
+        }
+        .header .header-buttons button,
+        .header .header-buttons svg {
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9470b;
+            color: white;
+            margin: 0;
+            text-align: center;
+        }
+        .header {
+            background-color: #b50f10;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+        }
+        .table-container {
+            display: table;
+            width: 100%;
+        }
+        .table-row {
+            display: table-row;
+        }
+        .table-cell {
+            display: table-cell;
+            vertical-align: top;
+            padding: 10px;
+        }
+        .form-group {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            width: 200px;
+            margin: 0 auto;
+        }
+        .form-group h2 {
+            background-color: #b50f10;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .navbar {
+            background-color: #ff4500;
+            padding: 10px 0;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: inline-block;
+        }
+        .footer {
+            background-color: #b50f10;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Imagenes/Banner El zarape.png" alt="El Zarape">
+        <div class="header-buttons">
+            <br><br>
+            <a href="Sugerencias.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-person-raised-hand" viewBox="0 0 16 16">
+                    <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207"/>
+                    <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                </svg><br>Sugerencias
+            </a>
+        </div>
+    </div>
+    <div class="navbar">
+        <a href="Index1.html">Pagina Principal</a>
+        <a href="index.html">Platillos</a>
+        <a href="Bebidas.html">Bebidas</a>
+        <a href="Postres.html">Postres</a>
+        <a href="Ubicacion.html">Ubicación</a>
+        <div>
+            <a href="https://www.facebook.com/profile.php?id=100082264015753&mibextid=ZbWKwL"><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="https://x.com/Angel65776265"><i class="fab fa-twitter-square fa-2x"></i></a>   
+            <a href="https://www.instagram.com"><i class="fab fa-instagram-square fa-2x"></i></a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Historial de compras</h1>
+    </div>
+    <div class="table-container">
+        <div class="table-row">
+            <div class="table-cell">
+                <div class="form-group">
+                    <h2>Historial de Productos</h2>
+                    <select id="historial10" size="10"></select>
+                    <p>Últimos 10 días</p>
+                </div>
+            </div>
+            <div class="table-cell">
+                <div class="form-group">
+                    <h2>Historial de Productos</h2>
+                    <select id="historial20" size="10"></select>
+                    <p>Últimos 20 días</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function loadHistory() {
+            let cart = localStorage.getItem('cart');
+            if (cart) {
+                cart = JSON.parse(cart);
+                let historial10 = document.getElementById('historial10');
+                let historial20 = document.getElementById('historial20');
+                historial10.innerHTML = '';
+                historial20.innerHTML = '';
+                for (let i = 0; i < cart.length && i < 10; i++) {
+                    let option = document.createElement('option');
+                    option.text = `${cart[i].name} - $${cart[i].price}`;
+                    historial10.add(option);
+                }
+                for (let i = 0; i < cart.length && i < 20; i++) {
+                    let option = document.createElement('option');
+                    option.text = `${cart[i].name} - $${cart[i].price}`;
+                    historial20.add(option);
+                }
+            }
+        }
+        window.onload = loadHistory;
+    </script>
+    <div class="footer">
+        <p>Acerca de Nosotros</p>
+        <p>Contáctanos al Correo: ElZarape1@gmail.com | Teléfono: 33 38952841</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Zarape - Restaurante Mexicano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="Css-Platillos.css" rel="stylesheet" type="text/css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9470b;
+            color: white;
+            margin: 0;
+            text-align: center;
+        }
+        .header {
+            position: relative;
+        }
+        .header img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-buttons a {
+            text-decoration: none;
+            color: white;
+        }
+        .header-buttons button {
+            background-color: #BBCF4A;
+            color: #b50f10;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .header-buttons svg {
+            width: 32px;
+            height: 32px;
+        }
+        .navbar {
+            background-color: #ff4500;
+            padding: 10px 0;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: inline-block;
+        }
+        .content {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .productos-container {
+            background-color: #ff5733;
+            padding: 20px;
+            border-radius: 10px;
+            color: black;
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product {
+            width: 30%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .product img {
+            width: 90%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .product-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .product-price {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+          h1 {
+    color: #ffffff;
+    border-radius: 10px;
+    background-color: #b50f10;
+    width: 80%;
+    height: 40%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Opcional: para centrar el texto dentro del h1 */
+}
+        button {
+            background-color: #BBCF4A;
+            color: black;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .footer {
+            background-color: #b50f10;
+            padding: 20px;
+            text-align: center;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Imagenes/Banner El zarape.png" alt="El Zarape">
+        <div class="header-buttons">
+            <br> 
+            <a href="Inicio-de-sesion.html">
+                <button><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                    <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                </svg><br>Login</button>
+            </a>
+            <a href="Comanda.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"/>
+                </svg><br>Compras
+            </a><br><br>
+            <a href="Sugerencias.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-person-raised-hand" viewBox="0 0 16 16">
+                    <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207"/>
+                    <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                </svg><br>Sugerencias
+            </a>
+            <br><br>
+        </div>
+    </div>
+    <div class="navbar">
+        <a href="Index1.html">Pagina Principal</a>
+        <a href="index.html">Platillos</a>
+        <a href="Bebidas.html">Bebidas</a>
+        <a href="Postres.html">Postres</a>
+        <a href="Ubicacion.html">Ubicación</a>
+        <a href="Combos.html">Combos</a>
+    </div>
+    <h1>COMBOS</h1>
+    <div class="content">
+        <div class="productos-container">
+            <div class="product">
+                <div>COMBO SENCILLO</div>
+                <img src="Combos/Combo sencillo.png" alt=""/>
+                <div class="product-name">COMBO SENCILLO</div>
+                <div class="product-price">Precio $250 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-SENCILLO" min="1" value="1">
+                <button onclick="addToCart('COMBO SENCILLO', 250, document.getElementById('quantity-SENCILLO').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>COMBO ESPECIAL</div>
+                <img src="Combos/Combo Especial.png" alt=""/>
+                <div class="product-name">COMBO ESPECIAL</div>
+                <div class="product-price">Precio $400 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-ESPECIAL" min="1" value="1">
+                <button onclick="addToCart('COMBO ESPECIAL', 400, document.getElementById('quantity-ESPECIAL').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>COMBO SUPREMO</div>
+                <img src="Combos/Combo Supremo.png" alt=""/>
+                <div class="product-name">COMBO SUPREMO</div>
+                <div class="product-price">Precio $600 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-SUPREMO" min="1" value="1">
+                <button onclick="addToCart('COMBO SUPREMOS', 600, document.getElementById('quantity-SUPREMO').value)">Agregar</button>
+            </div>
+           
+            
+        </div>
+    </div>
+    <div class="footer">
+        <p>Acerca de Nosotros</p>
+        <p>Contáctanos al Correo: ElZarape1@gmail.com | Teléfono: 33 38952841</p>
+    </div>
+
+    <script>
+        function addToCart(productName, price, quantity) {
+            // Retrieve cart from localStorage or initialize an empty array if it doesn't exist
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Create an object representing the product
+            let product = {
+                name: productName,
+                price: price,
+                quantity: parseInt(quantity)
+            };
+            
+            // Add the product to the cart
+            cart.push(product);
+            
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Redirect to the payment page
+            window.location.href = 'Pago.html';
+        }
+    </script>
+</body>
+</html>

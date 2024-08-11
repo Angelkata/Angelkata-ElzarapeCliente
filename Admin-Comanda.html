@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Zarape - Restaurante Mexicano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="Css-Platillos.css" rel="stylesheet" type="text/css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9470b;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+        }
+        .header img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+        }
+        .navbar {
+            background-color: #ff4500;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: inline-block;
+        }
+        h1 {
+            background-color: #b50f10;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ff5733;
+            padding: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .right {
+            width: 48%;
+            float: left;
+            margin: 1%;
+        }
+          .left {
+           width: 48%;
+           float: left;
+           margin: 1%;
+           background-color: red;
+           border-radius: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            color: #000;
+            text-align: left;
+        }
+        label, input, select, button {
+            display: block;
+            width: 90%;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #BBCF4A;
+            color: #b50f10;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .footer {
+            background-color: #b50f10;
+            padding: 20px;
+            text-align: center;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Imagenes/Banner El zarape.png" alt="El Zarape">
+    </div>
+    <div class="navbar">
+        <a href="Sucursal.html"><strong>Regresar al Inicio</strong></a>
+       
+    </div>
+    <h1>Administrar Comanda</h1>
+    <div class="container">
+        <div class="left">
+            <form>
+                <table>
+                    <tr>
+                        <th>ID-Cliente</th>
+                        <th>Nombre</th>
+                        <th>A. Paterno</th>
+                        <th>A. Materno</th>
+                        <th>Correo</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="id-cliente" value="123"></td>
+                        <td><input type="text" name="nombre" value="Nombre"></td>
+                        <td><input type="text" name="apellido-paterno" value="Apellido"></td>
+                        <td><input type="text" name="apellido-materno" value="Apellido"></td>
+                        <td><input type="email" name="correo" value="correo@dominio.com"></td>
+                    </tr>
+                </table>
+                <label for="buscar-usuario">Buscar Usuario</label>
+                <input type="text" id="buscar-usuario" name="buscar-usuario" placeholder="Búsqueda">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" name="correo" placeholder="Búsqueda">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                <label for="apellido-paterno">Apellido Paterno</label>
+                <input type="text" id="apellido-paterno" name="apellido-paterno" placeholder="Apellido Paterno">
+                <label for="apellido-materno">Apellido Materno</label>
+                <input type="text" id="apellido-materno" name="apellido-materno" placeholder="Apellido Materno">
+                <label for="correo-usuario">Correo</label>
+                <input type="email" id="correo-usuario" name="correo-usuario" placeholder="usuario@dominio.com">
+            </form>
+        </div>
+        <div class="right">
+            <form>
+                <table>
+                    <tr>
+                        <th>Comanda</th>
+                        <th>Precio</th>
+                        <th>Productos</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="comanda1" value="Comanda 1"></td>
+                        <td><input type="text" name="precio1" value="$$$"></td>
+                        <td><input type="text" name="productos1" value="Productos comprados"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="comanda2" value="Comanda 2"></td>
+                        <td><input type="text" name="precio2" value="$$$"></td>
+                        <td><input type="text" name="productos2" value="Productos comprados"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="comanda3" value="Comanda 3"></td>
+                        <td><input type="text" name="precio3" value="$$$"></td>
+                        <td><input type="text" name="productos3" value="Productos comprados"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="comanda4" value="Comanda 4"></td>
+                        <td><input type="text" name="precio4" value="$$$"></td>
+                        <td><input type="text" name="productos4" value="Productos comprados"></td>
+                    </tr>
+                </table>
+                <label for="seleccionar-comanda">Selecciona Comanda</label>
+                <select id="seleccionar-comanda" name="seleccionar-comanda" size="5">
+                    <option>Comanda día 27/05/23</option>
+                    <option>Comanda día 28/05/23</option>
+                    <option>Comanda día 29/07/23</option>
+                </select>
+                <label for="seleccionar-productos">Selecciona Productos</label>
+                <select id="seleccionar-productos" name="seleccionar-productos" size="5">
+                    <option>Tequila</option>
+                    <option>Tacos</option>
+                    <option>Huaraches</option>
+                </select>
+                <div class="content" style="float: next">
+                <button type="button">Eliminar Comanda</button>
+                <button type="button">Eliminar Productos</button>
+                <button type="submit">Aplicar Cambios</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="footer">
+        <p>Acerca de Nosotros</p>
+        <p>Contáctanos al Correo: ElZarape1@gmail.com | Teléfono: 33 38952841</p>
+    </div>
+</body>
+</html>
+

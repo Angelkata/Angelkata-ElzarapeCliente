@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Zarape - Restaurante Mexicano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+    
+    <style>
+       
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FF7F50;
+            color: white;
+        }
+        
+        .header {
+            background-color: #b50f10;
+            text-align: center;
+            position: relative;
+        }
+        
+         .header img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+        }  
+        
+        .content {
+            margin: 20px;
+            text-align: center;
+        }
+        
+         .content h1 {
+            background-color: #b50f10;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+         }
+        .admin-productos {
+            background-color: #FF6347;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+            max-width: 2000px;
+        }
+
+        .admin-productos label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        
+        .admin-productos select,
+        .admin-productos input,
+        .admin-productos textarea {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: calc(100% - 22px);
+            max-width: 500px;
+        }
+
+        .productos-lista {
+            margin: 2px auto;
+            width: 100%;
+            max-width: 800px;
+            background-color: #FFD700;
+            color: #000;
+            border-radius: 10px;
+            padding: 5px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .productos-lista table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .productos-lista th,
+        .productos-lista td {
+            padding: 10px;
+            border: 1px solid #000;
+        }
+        
+        .admin-productos-buttons {
+            text-align: center;
+        }
+
+        .admin-productos-buttons button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .admin-productos-buttons button:hover {
+            background-color: #FFA500;
+        }
+         .navbar {
+            background-color: #ff4500;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: inline-block;
+        }
+        .navbar a:hover {
+    background-color: #575757;
+    transform: scale(1.1);
+}
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Imagenes/Banner El zarape.png" alt="El Zarape">
+         
+    
+       
+    </div>
+    <div class="navbar">
+        <a href="Sucursal.html"><strong>Regresar al Inicio</strong></a>
+       
+    </div>
+    
+  
+    <div class="content">
+        <h1>Administrar Productos</h1>
+        
+        <div  class="admin-productos">
+            <label for="seleccion-categoria">Selecciona una Categoría</label>
+            <select id="seleccion-categoria">
+                <option>Platillo</option>
+                <option>Bebida</option>
+                <option>Combos</option>
+                <option>Postre</option>
+            </select>
+
+            <div  style="float: right;" class="productos-lista">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Producto 1</td>
+                            <td>$$$</td>
+                            <td>Descripción del Producto</td>
+                        </tr>
+                        <tr>
+                            <td>Producto 2</td>
+                            <td>$$$</td>
+                            <td>Descripción del Producto</td>
+                        </tr>
+                        
+                         <tr>
+                            <td>Producto 3</td>
+                            <td>$$$</td>
+                            <td>Descripción del Producto</td>
+                        </tr>
+                        <tr>
+                            <td>Producto 4</td>
+                            <td>$$$</td>
+                            <td>Descripción del Producto</td>
+                        </tr>
+                        <!-- Agrega más productos según sea necesario -->
+                    </tbody>
+                </table>
+            </div>
+
+            <label for="seleccion-producto">Selecciona un Producto</label>
+            <select id="seleccion-producto">
+                <option>Producto 1</option>
+                <option>Producto 2</option>
+                <option>Producto 3</option>
+                <option>Producto 4</option>
+            </select>
+            
+            <label for="nombre-producto">Cambiar Nombre</label>
+            <input type="text" id="nombre-producto" placeholder="Nombre del Producto">
+            
+            <label for="precio-producto">Cambiar Precio</label>
+            <input type="text" id="precio-producto" placeholder="Precio del Producto">
+            
+            <label for="descripcion-producto">Descripción del Producto</label>
+            <textarea id="descripcion-producto" placeholder="Descripción del Producto"></textarea>
+            
+            <label for="imagen-producto">Insertar Imagen</label>
+            <input type="file" id="imagen-producto">
+            
+            <div class="admin-productos-buttons">
+                <a href="Sucursal.html"> <button>Aplicar Cambios</button></a>
+                <a href=""> <button>Añadir</button></a>
+                <a href=""><button>Eliminar</button></a>
+          
+            </div>
+        </div>
+    </div>
+</body>
+</html>

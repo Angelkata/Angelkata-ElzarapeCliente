@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Zarape - Pago</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9470b;
+            color: white;
+            margin: 0;
+            text-align: center;
+        }
+        .header {
+            position: relative;
+        }
+        .header img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-buttons a {
+            text-decoration: none;
+            color: white;
+        }
+        .header-buttons button {
+            background-color: #BBCF4A;
+            color: #b50f10;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .header-buttons svg {
+            width: 32px;
+            height: 32px;
+        }
+        .navbar {
+            background-color: #ff4500;
+            padding: 10px 0;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: inline-block;
+        }
+        .content {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .form-container, .productos-container {
+            background-color: #ff5733;
+            padding: 20px;
+            border-radius: 10px;
+            color: black;
+        }
+        .form-container {
+            width: 40%;
+        }
+        .productos-container {
+            width: 55%;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label, input, select, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #BBCF4A;
+            color: black;
+        }
+          h1 {
+    color: #ffffff;
+    border-radius: 10px;
+    background-color: #b50f10;
+    width: 80%;
+    height: 40%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Opcional: para centrar el texto dentro del h1 */
+}
+            
+        button {
+            background-color: #BBCF4A;
+            color: black;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .footer {
+            background-color: #b50f10;
+            padding: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            background-color: white;
+            color: black;
+        }
+        .remove-btn {
+            background-color: #b50f10;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Imagenes/Banner El zarape.png" alt="El Zarape">
+        <div class="header-buttons">
+            <a href="Inicio-de-sesion.html">
+                <button><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                    <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                </svg><br>Login</button>
+            </a>
+            <br>   
+            <a href="Comanda.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"/>
+                </svg><br>Compras
+            </a>
+            <br><br>
+            <a href="Sugerencias.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-person-raised-hand" viewBox="0 0 16 16">
+                    <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207"/>
+                    <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                </svg><br>Sugerencias
+            </a>
+            <br><br>
+        </div>
+    </div>
+    <div class="navbar">
+        <a href="Index1.html">Pagina Principal</a>
+        <a href="index.html">Platillos</a>
+        <a href="Bebidas.html">Bebidas</a>
+        <a href="Postres.html">Postres</a>
+        <a href="Ubicacion.html">Ubicación</a>
+    </div>
+    <div class="content">
+        <div class="form-container">
+            <h1>Realiza tu Pago</h1>
+            <div class="form-group">
+                <label for="tarjeta">No° de Tarjeta Bancaria</label>
+                <input type="text" id="tarjeta" name="tarjeta">
+                <img src="Imagenes/Tarjetas.png" alt="Visa" style="width: 30%; margin-top: 30px;">
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre del Titular</label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+            <div class="form-group">
+                <label for="domicilio">Domicilio</label>
+                <input type="text" id="domicilio" name="domicilio">
+            </div>
+            <div class="form-group">
+                <label for="codigo-postal">Código Postal</label>
+                <input type="text" id="codigo-postal" name="codigo-postal">
+            </div>
+            <div class="form-group">
+                <label for="expiracion">Fecha de Expiración</label>
+                <input type="text" id="expiracion" name="expiracion" placeholder="MM/AA">
+            </div>
+            <div class="form-group">
+                <label for="cvv">Card Verification Value/Code</label>
+                <input type="text" id="cvv" name="cvv">
+            </div>
+            <div class="btn-group">
+                <a href="Index1.html">  <button onclick="realizarPago()">Pagar</button></a>
+                <a href="Index1.html"><button>Cancelar Pago</button></a>
+            </div>
+        </div>
+        <div class="productos-container">
+            <h1>Productos</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+            <div id="total-container">
+                <h2>Total a Pagar:</h2>
+                <p id="total-amount">$0</p>
+            </div>
+            <div>
+                <a href="Index1.html"><button>Añadir más Productos</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Acerca de Nosotros</p>
+        <p>Contáctanos al Correo: ElZarape1@gmail.com | Teléfono: 33 38952841</p>
+    </div>
+
+    <script>
+        function realizarPago() {
+            // Implementación de la lógica para realizar el pago
+            alert('Pago realizado exitosamente. ¡Gracias por tu compra!');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let cart = localStorage.getItem('cart');
+            if (cart) {
+                cart = JSON.parse(cart);
+                const cartItemsContainer = document.getElementById('cart-items');
+                const totalAmountElement = document.getElementById('total-amount');
+                let totalAmount = 0;
+
+                function updateCartDisplay() {
+                    cartItemsContainer.innerHTML = '';
+                    totalAmount = 0;
+
+                    cart.forEach((item, index) => {
+                        const row = document.createElement('tr');
+                        const total = item.price * item.quantity;
+                        totalAmount += total;
+
+                        row.innerHTML = `
+                            <td>${item.name}</td>
+                            <td>$${item.price}</td>
+                            <td>
+                                <input type="number" min="1" value="${item.quantity}" data-name="${item.name}">
+                            </td>
+                            <td>$${total}</td>
+                            <td>
+                                <button class="remove-btn" onclick="removeItem(${index})">Eliminar</button>
+                            </td>
+                        `;
+                        cartItemsContainer.appendChild(row);
+                    });
+
+                    totalAmountElement.textContent = `$${totalAmount}`;
+                }
+
+                updateCartDisplay();
+
+                cartItemsContainer.addEventListener('change', (event) => {
+                    if (event.target.tagName === 'INPUT') {
+                        const input = event.target;
+                        const productName = input.getAttribute('data-name');
+                        const newQuantity = parseInt(input.value, 10);
+                        const updatedCart = cart.map(item => {
+                            if (item.name === productName) {
+                                return { ...item, quantity: newQuantity };
+                            }
+                            return item;
+                        });
+
+                        localStorage.setItem('cart', JSON.stringify(updatedCart));
+                        updateCartDisplay();
+                    }
+                });
+            }
+        });
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('cart'));
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload();
+        }
+    </script>
+</body>
+</html>

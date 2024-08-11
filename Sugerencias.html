@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Zarape - Restaurante Mexicano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="Css-Platillos.css" rel="stylesheet" type="text/css"/>
+        <style>
+            @import "mystyles/styles.css";
+             input{
+        
+        
+        background-color: #BBCF4A;
+        font-size: 20px;
+    }
+    
+    
+    button{
+        font-size: 20px;
+        background-color: #FAEC6A  ;
+    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9470b;
+            color: white;
+            margin: 0;
+            text-align: center;
+        }
+        .header img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+        }
+        .navbar {
+            background-color: #ff4500;
+            padding: 10px 0;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: inline-block;
+        }
+        .footer {
+            background-color: #b50f10;
+            padding: 20px;
+        }
+        
+         .header .header-buttons button,
+         .header .header-buttons a {
+            
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: white;
+            
+        }
+        
+       .header .header-buttons button,
+        .header .header-buttons svg {
+         
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Imagenes/Banner El zarape.png" alt="El Zarape">
+        <div class="header-buttons">
+        <a  href="Inicio-de-sesion.html"> <button><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+</svg><br>Login
+            </button>
+            </a>
+            <br>   
+            <a href="Comanda.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"/>
+                    </svg><br>Compras
+            </a>
+            <br><br>
+           
+        </div>
+    </div>
+  <div class="navbar">
+     
+       <a href="Index1.html">Pagina Principal</a>
+        <a href="index.html">Platillos</a>
+        <a href="Bebidas.html">Bebidas</a>
+        <a href="Postres.html">Postres</a>
+        <a href="Ubicacion.html">Ubicación</a>
+        <div>
+            <a href="https://www.facebook.com/profile.php?id=100082264015753&mibextid=ZbWKwL"><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="https://x.com/Angel65776265"><i class="fab fa-twitter-square fa-2x"></i></a>   
+            <a href="https://www.instagram.com"><i class="fab fa-instagram-square fa-2x"></i></a>
+        </div>
+    </div>
+       <div class="content">
+        <h1>Sugerencias</h1>
+            <div class="form-group">
+                <label style="font-size: 180%" for="nombreCompleto">Nombre Completo</label>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" placeholder="Nombre,Apellidos">
+            </div>
+             <br> <br>
+            <div class="form-group">
+                <label style="font-size: 180%"  for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="usuario@dominio.com">
+            </div>
+              <br> <br>
+              <p style="font-size: 150%" >Describe alguna sugerencia o Molestia tenida</p>
+              <p style="font-size: 130%" ><strong> Ayudanos a mejorar nuestro servicio!</strong></p>
+              </div>
+            <div class="form-group">
+                <label for="comentarios"></label>
+                <textarea id="comentarios" name="comentarios" rows="15" cols="120"></textarea>
+            </div>
+               <br> <br>
+               <a href='Index1.html'> <button style="font-size: 150%" type="submit">Enviar</button></a>
+ 
+
+    
+    
+ <br><br><br><br><br><br><br>
+    <div class="footer">
+        <p>Acerca de Nosotros</p>
+        <p>Contáctanos al Correo: ElZarape1@gmail.com | Teléfono: 33 38952841</p>
+    </div>
+</body>
+</html>

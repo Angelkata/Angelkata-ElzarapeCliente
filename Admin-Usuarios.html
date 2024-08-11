@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Usuario</title>
+    
+    <link href="Css-Platillos.css" rel="stylesheet" type="text/css"/>
+    <style>
+        body {
+            background-color: #ff4500;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid white;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ff6347;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 40%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+       .buttons {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .buttons input {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: var(--button-font-size, 100%);
+        }
+        
+      
+
+        .buttons input:hover {
+            background-color: #ffa07a;
+        }
+
+        .form-container {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-size: 0.8em;
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+  <div class="header">
+        <img src="Imagenes/Banner El zarape.png" alt="El Zarape">
+    </div>
+    <div class="navbar">
+        <a href="Sucursal.html"><strong>Regresar al Inicio</strong></a>
+       
+    </div>
+<body>
+    <h1>ADMINISTRAR USUARIO</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID-Cliente</th>
+                <th>Nombre</th>
+                <th>A Paterno</th>
+                <th>A Materno</th>
+                <th>Correo</th>
+                <th>Contraseña</th>
+                <th>ROL</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody">
+            <!-- Los usuarios se cargarán aquí -->
+        </tbody>
+    </table>
+
+    <div class="form-container">
+        <div class="form-group">
+            <label for="searchUser">Buscar Usuario</label>
+            <input type="text" id="searchUser" placeholder="Búsqueda" onkeyup="searchUser()">
+        </div>
+        <div class="form-group">
+            <label for="searchEmail">Buscar Usuario correo</label>
+            <input type="text" id="searchEmail" placeholder="Búsqueda" onkeyup="searchUserByEmail()">
+        </div>
+        <div class="form-group">
+            <label for="userName">Nombre</label>
+            <input type="text" id="userName" placeholder="Usuario">
+        </div>
+        
+        <div class="buttons">
+        <input type="button"  value="Aplicar Cambios"   style="font-size: 100%" onclick="applyChanges()">
+        <input type="button" value="Añadir" style="font-size: 100%" onclick="addUser()">
+        <input type="button" value="Eliminar" style="font-size: 100%" onclick="deleteUser()">
+        </div>
+        
+        <div class="form-group">
+            <label for="userAPaterno">Apellido Paterno</label>
+            <input type="text" id="userAPaterno" placeholder="Apellido Paterno">
+        </div>
+        <div class="form-group">
+            <label for="userAMaterno">Apellido Materno</label>
+            <input type="text" id="userAMaterno" placeholder="Apellido Materno">
+        </div>
+        <div class="form-group">
+            <label for="userEmail">Correo</label>
+            <input type="email" id="userEmail" placeholder="usuario@dominio">
+        </div>
+        <div class="form-group">
+            <label for="userPassword">Contraseña</label>
+            <input type="password" id="userPassword" placeholder="Contraseña usuario">
+        </div>
+        <div class="form-group">
+            <label for="userRole">ROL USUARIO</label>
+            <select id="userRole">
+                <option value="Administrador">Administrador</option>
+                <option value="Cliente">Cliente</option>
+            </select>
+        </div>
+    </div>
+
+    
+
+    <script>
+        const users = [
+            { id: "1", nombre: "Angel", aPaterno: "Valadez", aMaterno: "Lopez", correo: "Angel@gmail.com", contrasena: "0009578", rol: "Administrador" },
+            { id: "2", nombre: "Favio Torres", aPaterno: "Perez", aMaterno: "Gomez", correo: "Juan@gmail.com", contrasena: "123456", rol: "Administrador" },
+            { id: "3", nombre: "MIGUEL", aPaterno: "", aMaterno: "SANCHEZ", correo: "SANCHEZ@gmail.com", contrasena: "0009578", rol: "Administrador" },
+            { id: "4", nombre: "Juan", aPaterno: "Perez", aMaterno: "Gomez", correo: "Juan@gmail.com", contrasena: "123456", rol: "Cliente" },
+            { id: "5", nombre: "ALEXIS", aPaterno: "VAZQUEZ", aMaterno: "Lopez", correo: "vazquez@gmail.com", contrasena: "0009578", rol: "Administrador" },
+            { id: "6", nombre: "sofia", aPaterno: "Perez", aMaterno: "Gomez", correo: "Juan@gmail.com", contrasena: "123456", rol: "Cliente" },
+            { id: "7", nombre: "sandra", aPaterno: "Valadez", aMaterno: "Lopez", correo: "Angel@gmail.com", contrasena: "0009578", rol: "EMPLEADO" },
+            { id: "8", nombre: "Juan", aPaterno: "Perez", aMaterno: "", correo: "Juan11@gmail.com", contrasena: "123456", rol: "Cliente" },
+            { id: "9", nombre: "jose angel", aPaterno: "cuellar", aMaterno: "guitierrez", correo: "Cuellar@gmail.com", contrasena: "00093333", rol: "Cliente" },
+            { id: "10", nombre: "Jose Angel", aPaterno: "Hernandez", aMaterno: "Arguelles", correo: "Juan@gmail.com", contrasena: "123423234", rol: "Cliente" },
+            { id: "11", nombre: "Amlo", aPaterno: "Sanchez", aMaterno: "Garcia", correo: "Amlo@gmail.com", contrasena: "00091228", rol: "Cliente" },
+            { id: "12", nombre: "FOX", aPaterno: "Perez", aMaterno: "Cabrera", correo: "Cabrera@gmail.com", contrasena: "123456", rol: "EMPLEADO" }
+        ];
+
+        function loadUsers() {
+            const tableBody = document.getElementById('userTableBody');
+            tableBody.innerHTML = '';
+            users.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${user.id}</td>
+                    <td>${user.nombre}</td>
+                    <td>${user.aPaterno}</td>
+                    <td>${user.aMaterno}</td>
+                    <td>${user.correo}</td>
+                    <td>${user.contrasena}</td>
+                    <td>${user.rol}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function applyChanges() {
+            const id = document.getElementById('searchUser').value;
+            const user = users.find(user => user.id === id);
+            if (user) {
+                user.nombre = document.getElementById('userName').value;
+                user.aPaterno = document.getElementById('userAPaterno').value;
+                user.aMaterno = document.getElementById('userAMaterno').value;
+                user.correo = document.getElementById('userEmail').value;
+                user.contrasena = document.getElementById('userPassword').value;
+                user.rol = document.getElementById('userRole').value;
+                loadUsers();
+                alert('Cambios aplicados');
+            } else {
+                alert('Usuario no encontrado');
+            }
+        }
+
+        function addUser() {
+            const newUser = {
+                id: Math.random().toString(36).substr(2, 9),
+                nombre: document.getElementById('userName').value,
+                aPaterno: document.getElementById('userAPaterno').value,
+                aMaterno: document.getElementById('userAMaterno').value,
+                correo: document.getElementById('userEmail').value,
+                contrasena: document.getElementById('userPassword').value,
+                rol: document.getElementById('userRole').value
+            };
+            users.push(newUser);
+            loadUsers();
+            alert('Usuario añadido');
+        }
+
+        function deleteUser() {
+            const id = document.getElementById('searchUser').value;
+            const index = users.findIndex(user => user.id === id);
+            if (index !== -1) {
+                users.splice(index, 1);
+                loadUsers();
+                alert('Usuario eliminado');
+            } else {
+                alert('Usuario no encontrado');
+            }
+        }
+
+        function searchUser() {
+            const searchValue = document.getElementById('searchUser').value.toLowerCase();
+            const filteredUsers = users.filter(user => user.id.includes(searchValue));
+            const tableBody = document.getElementById('userTableBody');
+            tableBody.innerHTML = '';
+            filteredUsers.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${user.id}</td>
+                    <td>${user.nombre}</td>
+                    <td>${user.aPaterno}</td>
+                    <td>${user.aMaterno}</td>
+                    <td>${user.correo}</td>
+                    <td>${user.contrasena}</td>
+                    <td>${user.rol}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function searchUserByEmail() {
+            const searchValue = document.getElementById('searchEmail').value.toLowerCase();
+            const filteredUsers = users.filter(user => user.correo.toLowerCase().includes(searchValue));
+            const tableBody = document.getElementById('userTableBody');
+            tableBody.innerHTML = '';
+            filteredUsers.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${user.id}</td>
+                    <td>${user.nombre}</td>
+                    <td>${user.aPaterno}</td>
+                    <td>${user.aMaterno}</td>
+                    <td>${user.correo}</td>
+                    <td>${user.contrasena}</td>
+                    <td>${user.rol}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        window.onload = loadUsers;
+    </script>
+</body>
+
+</html>
