@@ -8,18 +8,75 @@
     <link href="Css-Platillos.css" rel="stylesheet" type="text/css"/>
     <style>
         h1 {
-    color: #ffffff;
-    border-radius: 10px;
-    background-color: #b50f10;
-    width: 80%;
-    height: 40%;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center; /* Opcional: para centrar el texto dentro del h1 */
-}
-            
+            color: #ffffff;
+            border-radius: 10px;
+            background-color: #b50f10;
+            width: 80%;
+            height: 40%;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center; /* Opcional: para centrar el texto dentro del h1 */
+        }
+
+        .productos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Espacio entre productos */
+            justify-content: space-between; /* Distribuir productos de manera uniforme */
+        }
+
+        .product {
+            width: 30%; /* Ancho de cada producto para permitir tres productos en una fila */
+            text-align: center;
+            border: 1px solid #ccc; /* Borde para cada producto */
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para un efecto elegante */
+            border-radius: 10px; /* Bordes redondeados */
+            background-color: #fff; /* Fondo blanco para resaltar */
+            color: #000; /* Color de texto negro */
+        }
+
+        .product img {
+            width: 100%; /* Las imágenes ocuparán todo el ancho del contenedor */
+            height: 150px; /* Altura fija para todas las imágenes */
+            object-fit: cover; /* Escalar la imagen para llenar el contenedor */
+            border-radius: 5px; /* Bordes redondeados para las imágenes */
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .product-price {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .quantity-input {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #d9470b;
@@ -27,14 +84,17 @@
             margin: 0;
             text-align: center;
         }
+
         .header {
             position: relative;
         }
+
         .header img {
             width: 100%;
             height: auto;
             max-height: 400px;
         }
+
         .header-buttons {
             position: absolute;
             top: 10px;
@@ -44,10 +104,12 @@
             align-items: center;
             gap: 10px;
         }
+
         .header-buttons a {
             text-decoration: none;
             color: white;
         }
+
         .header-buttons button {
             background-color: #BBCF4A;
             color: #b50f10;
@@ -56,69 +118,19 @@
             cursor: pointer;
             border-radius: 5px;
         }
-        .header-buttons svg {
-            width: 32px;
-            height: 32px;
-        }
+
         .navbar {
             background-color: #ff4500;
             padding: 10px 0;
         }
+
         .navbar a {
             text-decoration: none;
             color: white;
             padding: 10px;
             display: inline-block;
         }
-        .content {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            padding: 20px;
-        }
-        .productos-container {
-            background-color: #ff5733;
-            padding: 20px;
-            border-radius: 10px;
-            color: black;
-            width: 80%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .product {
-            width: 30%;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .product img {
-            width: 90%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        .product-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .product-price {
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-        .quantity-input {
-            width: 50px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        button {
-            background-color: #BBCF4A;
-            color: black;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+
         .footer {
             background-color: #b50f10;
             padding: 20px;
@@ -164,79 +176,88 @@
     <div class="content">
         <div class="productos-container">
             <div class="product">
-                <div>Agua de Horchata</div>
-                <img src="Bebidas/Agua de Horchata.jpg" alt="Agua de Horchata">
-                <div class="product-name">Agua de Horchata</div>
-                <div class="product-price">Precio $40 pesos</div>
-                <input type="number" class="quantity-input" id="quantity-horchata" min="1" value="1">
-                <button onclick="addToCart('Agua de Horchata', 40, document.getElementById('quantity-horchata').value)">Agregar</button>
+                <div>Café Americano</div>
+                <img src="Imagenes/Cafe americano.jpg" alt="Café Americano">
+                <div class="product-name">Café Americano</div>
+                <div class="product-price">Precio $25.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-cafe-americano" min="1" value="1">
+                <button onclick="addToCart('Café Americano', 25, document.getElementById('quantity-cafe-americano').value)">Agregar</button>
             </div>
             <div class="product">
-                <div>Agua de Jamaica</div>
-                <img src="Bebidas/Agua de Jamaica.jpg" alt="Agua de Jamaica">
-                <div class="product-name">Agua de Jamaica</div>
-                <div class="product-price">Precio $40 pesos</div>
+                <div>Jugo de Naranja</div>
+                <img src="Imagenes/Jugo de naranja.jpg" alt="Jugo de Naranja">
+                <div class="product-name">Jugo de Naranja</div>
+                <div class="product-price">Precio $20.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-jugo-naranja" min="1" value="1">
+                <button onclick="addToCart('Jugo de Naranja', 20, document.getElementById('quantity-jugo-naranja').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>Limonada</div>
+                <img src="Imagenes/Limonada.jpg" alt="Limonada">
+                <div class="product-name">Limonada</div>
+                <div class="product-price">Precio $18.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-limonada" min="1" value="1">
+                <button onclick="addToCart('Limonada', 18, document.getElementById('quantity-limonada').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>Smoothie de Frutas</div>
+                <img src="Imagenes/Smoothie de frutas.jpg" alt="Smoothie de Frutas">
+                <div class="product-name">Smoothie de Frutas</div>
+                <div class="product-price">Precio $30.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-smoothie-frutas" min="1" value="1">
+                <button onclick="addToCart('Smoothie de Frutas', 30, document.getElementById('quantity-smoothie-frutas').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>Té Verde</div>
+                <img src="Imagenes/Te verde.jpg" alt="Té Verde">
+                <div class="product-name">Té Verde</div>
+                <div class="product-price">Precio $22.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-te-verde" min="1" value="1">
+                <button onclick="addToCart('Té Verde', 22, document.getElementById('quantity-te-verde').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>Chocolate Caliente</div>
+                <img src="Imagenes/Chocolate caliente.jpg" alt="Chocolate Caliente">
+                <div class="product-name">Chocolate Caliente</div>
+                <div class="product-price">Precio $25.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-chocolate-caliente" min="1" value="1">
+                <button onclick="addToCart('Chocolate Caliente', 25, document.getElementById('quantity-chocolate-caliente').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>Jamaica</div>
+                <img src="Imagenes/Jamaica.jpg" alt="Jamaica">
+                <div class="product-name">Jamaica</div>
+                <div class="product-price">Precio $20.00 pesos</div>
                 <input type="number" class="quantity-input" id="quantity-jamaica" min="1" value="1">
-                <button onclick="addToCart('Agua de Jamaica', 40, document.getElementById('quantity-jamaica').value)">Agregar</button>
+                <button onclick="addToCart('Jamaica', 20, document.getElementById('quantity-jamaica').value)">Agregar</button>
             </div>
             <div class="product">
-                <div>Agua de coco</div>
-                <img src="Bebidas/Agua de coco.jpg" alt="Agua de coco">
-                <div class="product-name">Agua de coco</div>
-                <div class="product-price">Precio $40 pesos</div>
-                <input type="number" class="quantity-input" id="quantity-coco" min="1" value="1">
-                <button onclick="addToCart('Agua de coco', 40, document.getElementById('quantity-coco').value)">Agregar</button>
+                <div>Horchata</div>
+                <img src="Imagenes/Horchata.jpg" alt="Horchata">
+                <div class="product-name">Horchata</div>
+                <div class="product-price">Precio $18.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-horchata" min="1" value="1">
+                <button onclick="addToCart('Horchata', 18, document.getElementById('quantity-horchata').value)">Agregar</button>
             </div>
             <div class="product">
-                <div>Agua de piña</div>
-                <img src="Bebidas/Agua de piña.jpg" alt="Agua de piña">
-                <div class="product-name">Agua de piña</div>
-                <div class="product-price">Precio $40 pesos</div>
-                <input type="number" class="quantity-input" id="quantity-pina" min="1" value="1">
-                <button onclick="addToCart('Agua de piña', 40, document.getElementById('quantity-pina').value)">Agregar</button>
+                <div>Agua de Frutas</div>
+                <img src="Imagenes/Agua de frutas.jpg" alt="Agua de Frutas">
+                <div class="product-name">Agua de Frutas</div>
+                <div class="product-price">Precio $30.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-agua-frutas" min="1" value="1">
+                <button onclick="addToCart('Agua de Frutas', 30, document.getElementById('quantity-agua-frutas').value)">Agregar</button>
             </div>
             <div class="product">
-                <div>Ponche</div>
-                <img src="Bebidas/Ponche.jpg" alt="Ponche">
-                <div class="product-name">Ponche</div>
-                <div class="product-price">Precio $250 pesos</div>
-                <input type="number" class="quantity-input" id="quantity-ponche" min="1" value="1">
-                <button onclick="addToCart('Ponche', 250, document.getElementById('quantity-ponche').value)">Agregar</button>
-            </div>
-            <div class="product">
-                <div>Torito</div>
-                <img src="Bebidas/bebida torito.jpg" alt="Torito">
-                <div class="product-name">Torito</div>
-                <div class="product-price">Precio $250 pesos</div>
-                <input type="number" class="quantity-input" id="quantity-torito" min="1" value="1">
-                <button onclick="addToCart('Torito', 250, document.getElementById('quantity-torito').value)">Agregar</button>
-            </div>
-            <div class="product">
-                <div>Tepache</div>
-                <img src="Bebidas/Tepache.jpg" alt="Tepache">
-                <div class="product-name">Tepache</div>
-                <div class="product-price">Precio $80 pesos</div>
-                <input type="number" class="quantity-input" id="quantity-tepache" min="1" value="1">
-                <button onclick="addToCart('Tepache', 80, document.getElementById('quantity-tepache').value)">Agregar</button>
-            </div>
-            <div class="product">
-                <div>Paloma</div>
-                <img src="Bebidas/Paloma.jpg" alt="Paloma">
-                <div class="product-name">Paloma</div>
-                <div class="product-price">Precio $60 pesos</div>
-                <input type="number" class="quantity-input" id="quantity-paloma" min="1" value="1">
-                <button onclick="addToCart('Paloma', 60, document.getElementById('quantity-paloma').value)">Agregar</button>
-            </div>
-            <div class="product">
-                <div>Atole</div>
-                <img src="Bebidas/Atole.jpg" alt="Atole">
-                <div class="product-name">Atole</div>
-                <div class="product-price">Precio $40 pesos</div>
-                <input type="number" class="quantity-input" id="quantity-atole" min="1" value="1">
-                <button onclick="addToCart('Atole', 40, document.getElementById('quantity-atole').value)">Agregar</button>
+                <div>Agua de Mango</div>
+                <img src="Imagenes/Agua de mango.jpg" alt="Agua de Mango">
+                <div class="product-name">Agua de Mango</div>
+                <div class="product-price">Precio $22.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-agua-mango" min="1" value="1">
+                <button onclick="addToCart('Agua de Mango', 22, document.getElementById('quantity-agua-mango').value)">Agregar</button>
             </div>
         </div>
     </div>
+
     <div class="footer">
         <p>Acerca de Nosotros</p>
         <p>Contáctanos al Correo: ElZarape1@gmail.com | Teléfono: 33 38952841</p>
@@ -266,3 +287,4 @@
     </script>
 </body>
 </html>
+
