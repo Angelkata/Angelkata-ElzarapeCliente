@@ -7,6 +7,76 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="Css-Platillos.css" rel="stylesheet" type="text/css"/>
     <style>
+        h1 {
+            color: #ffffff;
+            border-radius: 10px;
+            background-color: #b50f10;
+            width: 80%;
+            height: 40%;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center; /* Opcional: para centrar el texto dentro del h1 */
+        }
+
+        .productos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Espacio entre productos */
+            justify-content: space-between; /* Distribuir productos de manera uniforme */
+        }
+
+        .product {
+            width: 30%; /* Ancho de cada producto para permitir tres productos en una fila */
+            text-align: center;
+            border: 1px solid #ccc; /* Borde para cada producto */
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para un efecto elegante */
+            border-radius: 10px; /* Bordes redondeados */
+            background-color: #fff; /* Fondo blanco para resaltar */
+            color: #000; /* Color de texto negro */
+        }
+
+        .product img {
+            width: 100%; /* Las imágenes ocuparán todo el ancho del contenedor */
+            height: 150px; /* Altura fija para todas las imágenes */
+            object-fit: cover; /* Escalar la imagen para llenar el contenedor */
+            border-radius: 5px; /* Bordes redondeados para las imágenes */
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .product-price {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .quantity-input {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #d9470b;
@@ -14,14 +84,17 @@
             margin: 0;
             text-align: center;
         }
+
         .header {
             position: relative;
         }
+
         .header img {
             width: 100%;
             height: auto;
             max-height: 400px;
         }
+
         .header-buttons {
             position: absolute;
             top: 10px;
@@ -31,10 +104,12 @@
             align-items: center;
             gap: 10px;
         }
+
         .header-buttons a {
             text-decoration: none;
             color: white;
         }
+
         .header-buttons button {
             background-color: #BBCF4A;
             color: #b50f10;
@@ -43,81 +118,19 @@
             cursor: pointer;
             border-radius: 5px;
         }
-        .header-buttons svg {
-            width: 32px;
-            height: 32px;
-        }
+
         .navbar {
             background-color: #ff4500;
             padding: 10px 0;
         }
+
         .navbar a {
             text-decoration: none;
             color: white;
             padding: 10px;
             display: inline-block;
         }
-        .content {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            padding: 20px;
-        }
-        .productos-container {
-            background-color: #ff5733;
-            padding: 20px;
-            border-radius: 10px;
-            color: black;
-            width: 80%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .product {
-            width: 30%;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .product img {
-            width: 90%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        .product-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .product-price {
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-        .quantity-input {
-            width: 50px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-          h1 {
-    color: #ffffff;
-    border-radius: 10px;
-    background-color: #b50f10;
-    width: 80%;
-    height: 40%;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center; /* Opcional: para centrar el texto dentro del h1 */
-}
-        button {
-            background-color: #BBCF4A;
-            color: black;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+
         .footer {
             background-color: #b50f10;
             padding: 20px;
@@ -130,7 +143,7 @@
     <div class="header">
         <img src="Imagenes/Banner El zarape.png" alt="El Zarape">
         <div class="header-buttons">
-            <br> 
+            <br>   
             <a href="Inicio-de-sesion.html">
                 <button><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
@@ -159,37 +172,92 @@
         <a href="Ubicacion.html">Ubicación</a>
         <a href="Combos.html">Combos</a>
     </div>
-    <h1>COMBOS</h1>
+   <h1>COMBOS</h1>
     <div class="content">
         <div class="productos-container">
             <div class="product">
-                <div>COMBO SENCILLO</div>
-                <img src="Combos/Combo sencillo.png" alt=""/>
-                <div class="product-name">COMBO SENCILLO</div>
-                <div class="product-price">Precio $250 pesos</div>
-                <input type="number" class="quantity-input" id="quantity-SENCILLO" min="1" value="1">
-                <button onclick="addToCart('COMBO SENCILLO', 250, document.getElementById('quantity-SENCILLO').value)">Agregar</button>
+                <div>Tacos al Pastor</div>
+                <img src="Imagenes/Tacos  al pastor.jpg" alt="Tacos al Pastor">
+                <div class="product-name">Tacos al Pastor</div>
+                <div class="product-price">Precio $35.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-tacos-pastor" min="1" value="1">
+                <button onclick="addToCart('Tacos al Pastor', 35, document.getElementById('quantity-tacos-pastor').value)">Agregar</button>
             </div>
             <div class="product">
-                <div>COMBO ESPECIAL</div>
-                <img src="Combos/Combo Especial.png" alt=""/>
-                <div class="product-name">COMBO ESPECIAL</div>
-                <div class="product-price">Precio $400 pesos</div>
-                <input type="number" class="quantity-input" id="quantity-ESPECIAL" min="1" value="1">
-                <button onclick="addToCart('COMBO ESPECIAL', 400, document.getElementById('quantity-ESPECIAL').value)">Agregar</button>
+                <div>Enchiladas Verdes</div>
+                <img src="Imagenes/Enchiladas verdes.jpg" alt="Enchiladas Verdes">
+                <div class="product-name">Enchiladas Verdes</div>
+                <div class="product-price">Precio $40.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-enchiladas-verdes" min="1" value="1">
+                <button onclick="addToCart('Enchiladas Verdes', 40, document.getElementById('quantity-enchiladas-verdes').value)">Agregar</button>
             </div>
             <div class="product">
-                <div>COMBO SUPREMO</div>
-                <img src="Combos/Combo Supremo.png" alt=""/>
-                <div class="product-name">COMBO SUPREMO</div>
-                <div class="product-price">Precio $600 pesos</div>
-                <input type="number" class="quantity-input" id="quantity-SUPREMO" min="1" value="1">
-                <button onclick="addToCart('COMBO SUPREMOS', 600, document.getElementById('quantity-SUPREMO').value)">Agregar</button>
+                <div>Chiles en Nogada</div>
+                <img src="Imagenes/chiles en nogada.jpeg" alt="Chiles en Nogada">
+                <div class="product-name">Chiles en Nogada</div>
+                <div class="product-price">Precio $55.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-chiles-nogada" min="1" value="1">
+                <button onclick="addToCart('Chiles en Nogada', 55, document.getElementById('quantity-chiles-nogada').value)">Agregar</button>
             </div>
-           
-            
+            <div class="product">
+                <div>Tamal de Elote</div>
+                <img src="Imagenes/tamal de elote.jpg" alt="Tamal de Elote">
+                <div class="product-name">Tamal de Elote</div>
+                <div class="product-price">Precio $25.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-tamal-elote" min="1" value="1">
+                <button onclick="addToCart('Tamal de Elote', 25, document.getElementById('quantity-tamal-elote').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>Tostada de Tinga</div>
+                <img src="Imagenes/Tostadas de tinga.jpg" alt="Tostada de Tinga">
+                <div class="product-name">Tostada de Tinga</div>
+                <div class="product-price">Precio $30.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-tostada-tinga" min="1" value="1">
+                <button onclick="addToCart('Tostada de Tinga', 30, document.getElementById('quantity-tostada-tinga').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>Quesadilla de Flor de Calabaza</div>
+                <img src="Imagenes/Quesadilla de flor de calabaza.jpg" alt="Quesadilla de Flor de Calabaza">
+                <div class="product-name">Quesadilla de Flor de Calabaza</div>
+                <div class="product-price">Precio $20.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-quesadilla-flor" min="1" value="1">
+                <button onclick="addToCart('Quesadilla de Flor de Calabaza', 20, document.getElementById('quantity-quesadilla-flor').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>Sopa de Tortilla</div>
+                <img src="Imagenes/Sopa de tortilla.jpg" alt="Sopa de Tortilla">
+                <div class="product-name">Sopa de Tortilla</div>
+                <div class="product-price">Precio $85.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-sopa-tortilla" min="1" value="1">
+                <button onclick="addToCart('Sopa de Tortilla', 85, document.getElementById('quantity-sopa-tortilla').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>Pozole Rojo</div>
+                <img src="Imagenes/Pozole rojo.jpg" alt="Pozole Rojo">
+                <div class="product-name">Pozole Rojo</div>
+                <div class="product-price">Precio $45.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-pozole-rojo" min="1" value="1">
+                <button onclick="addToCart('Pozole Rojo', 45, document.getElementById('quantity-pozole-rojo').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>Ceviche de Camarón</div>
+                <img src="Imagenes/Ceviche con camaron.jpg" alt="Ceviche de Camarón">
+                <div class="product-name">Ceviche de Camarón</div>
+                <div class="product-price">Precio $50.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-ceviche-camaron" min="1" value="1">
+                <button onclick="addToCart('Ceviche de Camarón', 50, document.getElementById('quantity-ceviche-camaron').value)">Agregar</button>
+            </div>
+            <div class="product">
+                <div>Pastel de Chocolate</div>
+                <img src="Imagenes/Pastel de chocolate.jpg" alt="Pastel de Chocolate">
+                <div class="product-name">Pastel de Chocolate</div>
+                <div class="product-price">Precio $40.00 pesos</div>
+                <input type="number" class="quantity-input" id="quantity-pastel-chocolate" min="1" value="1">
+                <button onclick="addToCart('Pastel de Chocolate', 40, document.getElementById('quantity-pastel-chocolate').value)">Agregar</button>
+            </div>
         </div>
     </div>
+
     <div class="footer">
         <p>Acerca de Nosotros</p>
         <p>Contáctanos al Correo: ElZarape1@gmail.com | Teléfono: 33 38952841</p>
